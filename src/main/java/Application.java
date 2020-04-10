@@ -9,27 +9,30 @@ import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
+        final List<Table> tables = TableRepository.tables();
+        final List<Menu> menus = MenuRepository.menus();
+
+        run(tables, menus);
+        OutputView.printTables(tables);
+
+        OutputView.printMenus(menus);
+    }
+
+    private static void run(List<Table> tables, List<Menu> menus) {
         while (true) {
             OutputView.printOptions();
             int option = InputView.inputOption();
             validateOption(option);
             if (option == 1) {
-                addOrder();
+                addOrder(tables, menus);
             }
             if (option == 2) {
-                pay();
+                pay(tables);
             }
             if (option == 3) {
                 break;
             }
         }
-        final List<Table> tables = TableRepository.tables();
-        OutputView.printTables(tables);
-
-        final int tableNumber = InputView.inputTableNumber();
-
-        final List<Menu> menus = MenuRepository.menus();
-        OutputView.printMenus(menus);
     }
 
     private static void validateOption(int option) {
@@ -38,11 +41,17 @@ public class Application {
         }
     }
 
-    private static void addOrder() {
+    private static void addOrder(List<Table> tables, List<Menu> menus) {
+        OutputView.printTables(tables);
+        final int tableNumber = InputView.inputTableNumber();
 
+        OutputView.printMenus(menus);
+        final int menu = InputView.inputMenu();
+
+        final int amount = InputView.inputAmount();
     }
 
-    private static void pay() {
+    private static void pay(List<Table> tables) {
 
     }
 }

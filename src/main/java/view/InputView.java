@@ -16,4 +16,14 @@ public class InputView {
         System.out.println("## 원하는 기능을 선택하세요");
         return InputParser.parse(scanner.nextLine());
     }
+
+    public static int inputMenu() {
+        System.out.println("## 등록할 메뉴를 선택하세요");
+        return InputParser.parse(scanner.nextLine());
+    }
+
+    public static int inputAmount() {
+        System.out.println("## 메뉴의 수량을 입력하세요");
+        return InputParser.parse(scanner.nextLine());
+    }
 }
