@@ -1,7 +1,7 @@
 package domain;
 
 public class Order {
-    private Menu menu;
+    private final Menu menu;
     private OrderAmount amount;
 
     public Order(Menu menu, OrderAmount amount) {
@@ -9,4 +9,11 @@ public class Order {
         this.amount = amount;
     }
 
+    public void addAmount(int adder) {
+        amount = amount.add(adder);
+    }
+
+    public OrderAmount getOrderAmount() {
+        return amount;
+    }
 }

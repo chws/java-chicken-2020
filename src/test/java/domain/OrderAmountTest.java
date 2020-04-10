@@ -9,7 +9,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class OrderAmountTest {
-
     @ParameterizedTest
     @CsvSource({"1", "98", "99"})
     @DisplayName("옳은 주문 수량 입력 테스트")
