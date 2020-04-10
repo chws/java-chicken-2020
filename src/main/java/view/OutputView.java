@@ -44,11 +44,12 @@ public class OutputView {
     private static void printBottomLine(final List<Table> tables) {
         for (final Table table : tables) {
             if (table.hasUnpaidOrders()) {
-                System.out.println(TABLE_UNPAID);
+                System.out.print(TABLE_UNPAID);
                 continue;
             }
-            System.out.println(BOTTOM_LINE);
+            System.out.print(BOTTOM_LINE);
         }
+        System.out.println();
     }
 
     public static void printOptions() {
