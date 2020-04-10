@@ -65,4 +65,9 @@ public class OutputView {
         orders.keySet()
                 .forEach(menu -> System.out.println(menu.getName() + orders.get(menu) + menu.getPrice()));
     }
+
+    public static void printTotalAmount(int totalAmount) {
+        System.out.println("## 최종 결제할 금액");
+        System.out.println(totalAmount + "원");
+    }
 }

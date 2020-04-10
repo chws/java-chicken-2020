@@ -51,6 +51,8 @@ public class Application {
         OutputView.printOrderHistory(table);
 
         final MethodOfPayment methodOfPayment = MethodOfPayment.of(InputView.inputMethodOfPayment(table));
-
+        TableManager tableManager = new TableManager();
+        final int totalAmount = tableManager.calculateTablePayment(table, methodOfPayment);
+        OutputView.printTotalAmount(totalAmount);
     }
 }
