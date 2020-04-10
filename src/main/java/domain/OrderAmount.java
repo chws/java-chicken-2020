@@ -41,4 +41,9 @@ public class OrderAmount {
     public int hashCode() {
         return Objects.hash(orderAmount);
     }
+
+    @Override
+    public String toString() {
+        return Integer.toString(orderAmount);
+    }
 }

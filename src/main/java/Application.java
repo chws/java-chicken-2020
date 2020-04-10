@@ -51,7 +51,7 @@ public class Application {
 
     private static void pay(List<Table> tables) {
         OutputView.printTables(tables);
-        final int tableNumber = InputView.inputTableNumber();
-        OutputView.printOrderHistory(tableNumber);
+        final Table table = TableRepository.of(InputView.inputTableNumber());
+        OutputView.printOrderHistory(table);
     }
 }

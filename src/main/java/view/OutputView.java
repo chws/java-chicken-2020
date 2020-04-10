@@ -1,9 +1,11 @@
 package view;
 
 import domain.Menu;
+import domain.OrderAmount;
 import domain.Table;
 
 import java.util.List;
+import java.util.Map;
 
 public class OutputView {
     private static final String TOP_LINE = "┌ ─ ┐";
@@ -56,9 +58,11 @@ public class OutputView {
         System.out.println("3 - 프로그램 종료");
     }
 
-    public static void printOrderHistory(int tableNumber) {
+    public static void printOrderHistory(Table table) {
         System.out.println("## 주문내역");
         System.out.println("메뉴\t수량\t금액");
-        
+        Map<Menu, OrderAmount> orders = table.getOrders();
+        orders.keySet()
+                .forEach(menu -> System.out.println(menu.getName() + orders.get(menu) + menu.getPrice()));
     }
 }
