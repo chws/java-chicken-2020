@@ -8,11 +8,7 @@ public class Application {
     public static void main(String[] args) {
         final List<Table> tables = TableRepository.tables();
         final List<Menu> menus = MenuRepository.menus();
-
         run(tables, menus);
-        OutputView.printTables(tables);
-
-        OutputView.printMenus(menus);
     }
 
     private static void run(List<Table> tables, List<Menu> menus) {
@@ -53,5 +49,8 @@ public class Application {
         OutputView.printTables(tables);
         final Table table = TableRepository.of(InputView.inputTableNumber());
         OutputView.printOrderHistory(table);
+
+        final MethodOfPayment methodOfPayment = MethodOfPayment.of(InputView.inputMethodOfPayment(table));
+
     }
 }
