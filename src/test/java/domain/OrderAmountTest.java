@@ -9,6 +9,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class OrderAmountTest {
+    @Test
+    @DisplayName("같은 수량의 orderamount가 같은 것으로 인식되는지 확인")
+    void sameOrderAmount() {
+        OrderAmount oa = new OrderAmount(12);
+        OrderAmount oa2 = new OrderAmount(12);
+        assertThat(oa).isEqualTo(oa2);
+    }
+
+
     @ParameterizedTest
     @CsvSource({"1", "98", "99"})
     @DisplayName("옳은 주문 수량 입력 테스트")

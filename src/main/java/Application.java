@@ -44,8 +44,9 @@ public class Application {
 
         OutputView.printMenus(menus);
         final Menu menu = MenuRepository.of(InputView.inputMenu());
-
         final OrderAmount orderAmount = new OrderAmount(InputView.inputOrderAmount());
+
+        table.addOrder(menu, orderAmount);
     }
 
     private static void pay(List<Table> tables) {

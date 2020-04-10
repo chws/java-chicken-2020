@@ -27,7 +27,8 @@ public class Table {
 
     public void addOrder(Menu menu, OrderAmount orderAmount) {
         if (orders.containsKey(menu)) {
-            orders.put(menu, orderAmount.add(orderAmount));
+            OrderAmount beforeOrderAmount = orders.get(menu);
+            orders.put(menu, beforeOrderAmount.add(orderAmount));
         }
         orders.putIfAbsent(menu, orderAmount);
     }
