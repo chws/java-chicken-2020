@@ -52,6 +52,8 @@ public class Application {
     }
 
     private static void pay(List<Table> tables) {
-
+        OutputView.printTables(tables);
+        final int tableNumber = InputView.inputTableNumber();
+        OutputView.printOrderHistory(tableNumber);
     }
 }

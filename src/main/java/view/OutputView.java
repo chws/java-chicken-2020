@@ -44,4 +44,10 @@ public class OutputView {
         System.out.println("2 - 결제하기");
         System.out.println("3 - 프로그램 종료");
     }
+
+    public static void printOrderHistory(int tableNumber) {
+        System.out.println("## 주문내역");
+        System.out.println("메뉴\t수량\t금액");
+        
+    }
 }
