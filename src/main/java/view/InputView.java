@@ -22,7 +22,7 @@ public class InputView {
         return InputParser.parse(scanner.nextLine());
     }
 
-    public static int inputAmount() {
+    public static int inputOrderAmount() {
         System.out.println("## 메뉴의 수량을 입력하세요");
         return InputParser.parse(scanner.nextLine());
     }

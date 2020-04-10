@@ -13,6 +13,10 @@ public class Order {
         amount = amount.add(adder);
     }
 
+    public Menu getMenu() {
+        return menu;
+    }
+
     public OrderAmount getOrderAmount() {
         return amount;
     }

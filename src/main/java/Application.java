@@ -1,7 +1,4 @@
-import domain.Menu;
-import domain.MenuRepository;
-import domain.Table;
-import domain.TableRepository;
+import domain.*;
 import view.InputView;
 import view.OutputView;
 
@@ -48,7 +45,7 @@ public class Application {
         OutputView.printMenus(menus);
         final Menu menu = MenuRepository.of(InputView.inputMenu());
 
-        final int amount = InputView.inputAmount();
+        final OrderAmount orderAmount = new OrderAmount(InputView.inputOrderAmount());
     }
 
     private static void pay(List<Table> tables) {

@@ -21,6 +21,10 @@ public class OrderAmount {
         return new OrderAmount(this.orderAmount + adder);
     }
 
+    public OrderAmount add(OrderAmount adder) {
+        return add(adder.getOrderAmount());
+    }
+
     public int getOrderAmount() {
         return orderAmount;
     }
