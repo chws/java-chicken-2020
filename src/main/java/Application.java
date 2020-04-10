@@ -43,10 +43,10 @@ public class Application {
 
     private static void addOrder(List<Table> tables, List<Menu> menus) {
         OutputView.printTables(tables);
-        Table table = TableRepository.of(InputView.inputTableNumber());
+        final Table table = TableRepository.of(InputView.inputTableNumber());
 
         OutputView.printMenus(menus);
-        final int menu = InputView.inputMenu();
+        final Menu menu = MenuRepository.of(InputView.inputMenu());
 
         final int amount = InputView.inputAmount();
     }
